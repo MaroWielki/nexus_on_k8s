@@ -17,6 +17,9 @@ spec:
       - image: sonatype/nexus3
         imagePullPolicy: Always
         name: nexus
+        env:
+        - name: CONTEXT_PATH
+          value: "/repo"
         ports:
         - containerPort: 8081
         - containerPort: 5000

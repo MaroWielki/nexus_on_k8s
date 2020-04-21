@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: nexus
+  name: nexus
+spec:
+  rules:
+  - host: k8s.mareklaskowski.pl
+    http:
+      paths:
+      - backend:
+          serviceName: nexus-service-clusterip
+          servicePort: 8081
+        path: /
+      
