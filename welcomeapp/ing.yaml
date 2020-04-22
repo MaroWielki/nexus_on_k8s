@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myapp-nexus-ns-ingress
+  namespace: nexus
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: k8s.mareklaskowski.pl
+    http:
+      paths:
+      - backend:
+          serviceName: myapp-svc-cip-ns-nexus
+          servicePort: 3000
+        path: /myapp

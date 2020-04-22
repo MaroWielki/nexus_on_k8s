@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: helloapp
-        image: http://k8s.mareklaskowski.pl/repo/marek_helloapp:0.2
+        image: k8s.mareklaskowski.pl/repo/marek_helloapp:0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 3000 
