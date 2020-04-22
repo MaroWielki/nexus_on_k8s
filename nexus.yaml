@@ -18,8 +18,8 @@ spec:
         imagePullPolicy: Always
         name: nexus
         env:
-        - name: CONTEXT_PATH
-          value: "/repo"
+        - name: NEXUS_CONTEXT
+          value: "ui"
         ports:
         - containerPort: 8081
         - containerPort: 5000

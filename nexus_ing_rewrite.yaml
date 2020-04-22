@@ -1,8 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
+  name: nexus-rewrite-ns-ingress
   namespace: nexus
-  name: nexus-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /ui
 spec:
   rules:
   - host: k8s.mareklaskowski.pl
@@ -10,6 +12,5 @@ spec:
       paths:
       - backend:
           serviceName: nexus-service-clusterip
-          servicePort: 8081
+          servicePort: 5000
         path: /repo
-      
